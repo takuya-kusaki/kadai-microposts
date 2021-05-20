@@ -17,6 +17,12 @@
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">Followers  <span class="badge badge-secondary"><%= @count_followers %></span></a></li>
       <li <li class="nav-item"><a href="<%= favoritings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(favoritings_user_path(@user)) %>">Favaritings  <span class="badge badge-secondary"><%= @count_favolitings %></span></a></li>
     </ul>
-    <%= render 'users', users: @followers %>
+    <ul class="list-unstyled">
+      <li class="media">
+        <div class="media-body">
+          <%= render 'microposts/microposts', microposts: @favoritings %>
+        </div>
+      </li>
+   </ul>
   </div>
 </div>
