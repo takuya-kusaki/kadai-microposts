@@ -8,12 +8,14 @@
         </div>
         <div>
           <p><%= micropost.content %></p>
-          <%= render "favorites/favorite_button", user: @user, micropost: micropost %>
         </div>
-        <div>
-          <% if current_user == micropost.user %>
-            <%= link_to "delete", micropost, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
-          <% end %>
+        <div style="display:inline-flex">
+          <%= render "favorites/favorite_button", user: @user, micropost: micropost %>
+          <div>
+            <% if current_user == micropost.user %>
+              <%= link_to "delete", micropost, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </li>
